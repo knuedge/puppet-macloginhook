@@ -16,3 +16,10 @@ task :validate do
     sh "erb -P -x -T '-' #{template} | ruby -c"
   end
 end
+
+task :test => [
+  :metadata_lint,
+  :syntax,
+  :lint,
+  :spec,
+]
